@@ -26,6 +26,8 @@
                 <button class="btn btn-outline-primary" @onclick="MostrarLongitudInterno">Mostrar LCI</button>
                 <button class="btn btn-outline-primary" @onclick="MostrarLongitudExterno">Mostrar LCE</button>
                 <button class="btn btn-outline-primary" @onclick="EliminarNodoHoja">Eliminar Nodos Hoja</button>
+                <button class="btn btn-outline-primary" @onclick="Intercambiar">Intercambiar</button>
+
             </div>
 
             <p class="text-info">@mensaje</p>
@@ -194,12 +196,21 @@
     {
         LimpiarVisuales();
         // double longitud = abb.CalcularLongitudCaminoExterno();
-       // mensaje = $"La longitud del camino externo es: {longitud}.";
+        // mensaje = $"La longitud del camino externo es: {longitud}.";
     }
 
     void EliminarNodoHoja() {
         mensaje = abb.EliminarNodosH();
         LimpiarVisuales();
+    }
+    void VerSonSimilares() {
+        if (abb.verSimilar()) { 
+            mensaje = "Los árboles son similares.";
+        }
+        else
+        {
+            mensaje = "Los árboles no son similares.";
+        }
     }
 
     void MostrarGrado()
@@ -211,6 +222,13 @@
             ? $"El grado del nodo {valor} es: {grado.Value}."
             : $"El nodo {valor} no existe en el árbol.";
         valorBuscado = null;
+    }
+
+    void Intercambiar(){
+
+        abb.IntercambiarSubArboles();
+        mensaje = "Se intercambiaron los subárboles izquierdo y derecho de la raíz.";
+        LimpiarVisuales(); 
     }
 
     void MostrarNivel()

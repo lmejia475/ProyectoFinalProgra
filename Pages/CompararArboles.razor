@@ -13,8 +13,11 @@
             </div>
 
             <div class="d-grid gap-2 mb-2">
-                <button class="btn btn-success" @onclick="Insertar">Insertar</button>
-                <button class="btn btn-danger" @onclick="Insertar">Comparar</button>
+                <button class="btn btn-success" @onclick="Insertar">Insertar a Arbol 1</button>
+                <button class="btn btn-success" @onclick="Insertar2">Insertar a Arbol 2</button>
+                <button class="btn btn-danger" @onclick="VerSimiliares">Comparar Similitud</button>
+                <button class="btn btn-danger" @onclick="VerEquidades">Comparar equidad</button>
+                <button class="btn btn-danger" @onclick="VerDistint">Son Distintos?</button>
             </div>
 
             <p class="text-info">@mensaje</p>
@@ -71,39 +74,37 @@
         </div>
 
         <div class="col-md-9 p-4">
-            
+
             <div class="mt-5">
                 <h3 class="mb-3">Visualización del Árbol</h3>
-                <ArbolGrafico Raiz="@abb.Raiz"
-                              ValorBuscado="@valorBuscado"
-                              Hijos="@hijos"
-                              DescendientesTotales="@todosLosDescendientes"
-                              ValorPadre="@padre"
-                              NodosHoja="@hojas"
-                              NodosInteriores="@interiores"
-                              NodoConGrado="@valorGrado" />
+                <ArbolComparar1Component Raiz="@abb.Raiz"
+                ValorBuscado="@valorBuscado"
+                Hijos="@hijos"
+                DescendientesTotales="@todosLosDescendientes"
+                ValorPadre="@padre"
+                NodosHoja="@hojas"
+                NodosInteriores="@interiores"
+                NodoConGrado="@valorGrado" />
             </div>
 
-            <ArbolComparar1Component Raiz="@abb.Raiz"
-                          ValorBuscado="@valorBuscado"
-                          Hijos="@hijos"
-                          DescendientesTotales="@todosLosDescendientes"
-                          ValorPadre="@padre"
-                          NodosHoja="@hojas"
-                          NodosInteriores="@interiores"
-                          NodoConGrado="@valorGrado" />
-        </div>
+            <ArbolComparar2Component Raiz="@abb.Raiz2"
+            ValorBuscado="@valorBuscado2"
+            Hijos="@hijos2"
+            DescendientesTotales="@todosLosDescendientes2"
+            ValorPadre="@padre2"
+            NodosHoja="@hojas2"
+            NodosInteriores="@interiores2"
+            NodoConGrado="@valorGrado2" />
         </div>
     </div>
+</div>
 
 @code {
     ArbolBinarioBusquedaManual abb = new();
-    RecorridoABB preorden = new();
-    RecorridoABB inorden = new();
-    RecorridoABB postorden = new();
 
     int valor;
     int? valorBuscado = null;
+    int? valorBuscado2 = null;
     string mensaje = "";
 
     Descendientes? hijos = null;
@@ -115,105 +116,61 @@
     int? nivel = null;
     int? valorGrado = null;
 
+
+    Descendientes? hijos2 = null;
+    DescendientesABB? todosLosDescendientes2 = null;
+    int? padre2 = null;
+    RecorridoABB? hojas2 = null;
+    RecorridoABB? interiores2 = null;
+    int? grado2 = null;
+    int? nivel2 = null;
+    int? valorGrado2 = null;
+
     void Insertar()
     {
         abb.Insertar(valor);
         mensaje = $"Se insertó el valor {valor}.";
         LimpiarVisuales();
-        ActualizarRecorridos();
     }
 
-    void Buscar()
+    void Insertar2()
     {
-        valorBuscado = valor;
+        abb.Insertar2(valor);
+        mensaje = $"Se insertó el valor {valor}.";
         LimpiarVisuales();
-        bool existe = abb.Buscar(valor);
-        mensaje = existe
-            ? $"El valor {valor} fue encontrado."
-            : $"El valor {valor} no está en el árbol.";
     }
 
-    void Eliminar()
-    {
-        bool eliminado = abb.EliminarConResultado(valor);
-        mensaje = eliminado
-            ? $"Se eliminó el valor {valor}."
-            : $"El valor {valor} no fue encontrado.";
-        valorBuscado = null;
-        LimpiarVisuales();
-        ActualizarRecorridos();
+    void VerSimiliares() { 
+        if (abb.verSimilar())
+        {
+            mensaje = "Los árboles son similares.";
+        }
+        else
+        {
+            mensaje = "Los árboles no son similares.";
+        }
     }
 
-    void MostrarHijos()
-    {
-        LimpiarVisuales();
-        hijos = abb.ObtenerDescendientes(valor);
-        mensaje = $"Mostrando hijos del nodo {valor}.";
-        valorBuscado = valor;
+    void VerEquidades() { 
+        if (abb.verEquivalente())
+        {
+            mensaje = "Los árboles son equitativos.";
+        }
+        else
+        {
+            mensaje = "Los árboles no son equitativos.";
+        }
     }
 
-    void MostrarDescendientesTodos()
-    {
-        LimpiarVisuales();
-        todosLosDescendientes = abb.ObtenerDescendientesTodos(valor);
-        mensaje = $"Mostrando todos los descendientes del nodo {valor}.";
-        valorBuscado = valor;
-    }
-
-    void MostrarPadre()
-    {
-        LimpiarVisuales();
-        padre = abb.ObtenerPadre(valor);
-        mensaje = padre.HasValue
-            ? $"El padre del nodo {valor} es: {padre.Value}."
-            : $"El nodo {valor} no tiene padre (es la raíz o no existe).";
-        valorBuscado = valor;
-    }
-
-    void MostrarHojas()
-    {
-        LimpiarVisuales();
-        hojas = abb.ObtenerNodosHoja();
-        mensaje = "Mostrando nodos hoja.";
-    }
-
-    void MostrarInteriores()
-    {
-        LimpiarVisuales();
-        interiores = abb.ObtenerNodosInteriores();
-        mensaje = "Mostrando nodos interiores.";
-    }
-
-    void MostrarGrado()
-    {
-        LimpiarVisuales();
-        grado = abb.ObtenerGrado(valor);
-        valorGrado = valor;
-        mensaje = grado.HasValue
-            ? $"El grado del nodo {valor} es: {grado.Value}."
-            : $"El nodo {valor} no existe en el árbol.";
-        valorBuscado = null;
-    }
-
-    void MostrarNivel()
-    {
-        LimpiarVisuales();
-        nivel = abb.ObtenerNivel(valor);
-        mensaje = nivel.HasValue
-            ? $"El nivel del nodo {valor} es: {nivel.Value}."
-            : $"El nodo {valor} no existe en el árbol.";
-        valorBuscado = valor;
-    }
-
-    void ActualizarRecorridos()
-    {
-        preorden.Vaciar();
-        inorden.Vaciar();
-        postorden.Vaciar();
-
-        abb.RecorridoPreOrden(abb.Raiz, preorden);
-        abb.RecorridoInOrden(abb.Raiz, inorden);
-        abb.RecorridoPostOrden(abb.Raiz, postorden);
+    void VerDistint(){
+        if (abb.verDistintos())
+        {
+            mensaje = "Los árboles son distintos.";
+        }
+        else
+        {
+            mensaje = "Los árboles no son distintos.";
+        }
     }
 
     void LimpiarVisuales()
@@ -226,5 +183,17 @@
         grado = null;
         valorGrado = null;
         nivel = null;
+    }
+
+    void LimpiarVisuales2()
+    {
+        hijos2 = null;
+        todosLosDescendientes2 = null;
+        padre2 = null;
+        hojas2 = null;
+        interiores2 = null;
+        grado2 = null;
+        valorGrado2 = null;
+        nivel2 = null;
     }
 }

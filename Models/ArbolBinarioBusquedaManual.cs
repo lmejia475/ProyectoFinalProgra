@@ -7,9 +7,16 @@ namespace ProyectoFinalProgra.Models
     {
         public NodoABB? Raiz { get; set; }
 
+        public NodoABB? Raiz2 { get; set; }
+
         public void Insertar(int valor)
         {
             Raiz = InsertarRecursivo(Raiz, valor);
+        }
+
+        public void Insertar2(int valor)
+        {
+            Raiz2 = InsertarRecursivo(Raiz2, valor);
         }
 
         private NodoABB InsertarRecursivo(NodoABB? nodo, int valor)
@@ -221,6 +228,82 @@ namespace ProyectoFinalProgra.Models
                     EliminarNodosHoja(nodo.Derecho); 
             }
         }
+
+        public bool verSimilar()
+        {
+            return SonSimilares(Raiz, Raiz2);
+        }
+
+        public static bool SonSimilares(NodoABB? a, NodoABB? b)
+        {
+            if (a == null && b == null) return true;
+            if (a == null || b == null) return false;
+
+
+            return SonSimilares(a.Izquierdo, b.Izquierdo) &&
+                   SonSimilares(a.Derecho, b.Derecho);
+        }
+
+        public bool verEquivalente()
+        {
+            return SonEquivalentes(Raiz, Raiz2);
+        }
+
+        public static bool SonEquivalentes(NodoABB? a, NodoABB? b)
+        {
+            if (a == null && b == null) return true;
+            if (a == null || b == null) return false;
+            if (a.Valor != b.Valor) return false;      
+
+            return SonEquivalentes(a.Izquierdo, b.Izquierdo) &&
+                   SonEquivalentes(a.Derecho, b.Derecho);
+        }
+
+        public bool verDistintos() {
+            return SonDistintos(Raiz, Raiz2);
+        }
+
+        public static bool SonDistintos(NodoABB? a, NodoABB? b)
+        {
+            return !SonEquivalentes(a, b);
+        }
+
+        public void IntercambiarSubArboles()
+        {
+            Intercambiar(Raiz);
+        }
+
+        private void Intercambiar(NodoABB? nodo)
+        {
+            if (nodo == null) return;
+
+            NodoABB? tmp = nodo.Izquierdo;
+            nodo.Izquierdo = nodo.Derecho;
+            nodo.Derecho = tmp;
+
+            Intercambiar(nodo.Izquierdo);
+            Intercambiar(nodo.Derecho);
+        }
+
+        public int CalcularLongitudCaminoExterno()
+        {
+            return LCE(Raiz, 0);   
+        }
+
+        private int LCE(NodoABB? nodo, int nivel)
+        {
+
+            if (nodo == null)
+                return nivel;
+
+
+            return LCE(nodo.Izquierdo, nivel + 1) +
+                   LCE(nodo.Derecho, nivel + 1);
+        }
+
+
+
+
 
 
         private void ObtenerHojasRecursivo(NodoABB? nodo, RecorridoABB lista)
