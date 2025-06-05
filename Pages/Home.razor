@@ -1,0 +1,238 @@
+﻿@page "/"
+@using Models
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3 bg-light p-3">
+            <h4 class="text-primary">Operaciones</h4>
+
+            <div class="mb-2">
+                <label>Ingrese un valor</label>
+                <input type="number" class="form-control" @bind="valor" />
+            </div>
+
+            <div class="d-grid gap-2 mb-2">
+                <button class="btn btn-success" @onclick="Insertar">Insertar</button>
+                <button class="btn btn-primary" @onclick="Buscar">Buscar</button>
+                <button class="btn btn-danger" @onclick="Eliminar">Eliminar</button>
+                <button class="btn btn-info" @onclick="MostrarHijos">Mostrar Hijos</button>
+                <button class="btn btn-secondary" @onclick="MostrarDescendientesTodos">Mostrar Descendientes</button>
+                <button class="btn btn-dark" @onclick="MostrarPadre">Mostrar Padre</button>
+                <button class="btn btn-outline-success" @onclick="MostrarHojas">Mostrar Nodos Hoja</button>
+                <button class="btn btn-outline-info" @onclick="MostrarInteriores">Mostrar Nodos Interiores</button>
+                <button class="btn btn-outline-warning" @onclick="MostrarGrado">Mostrar Grado</button>
+                <button class="btn btn-outline-primary" @onclick="MostrarNivel">Mostrar Nivel</button>
+                <button class="btn btn-outline-primary" @onclick="MostrarLongitudInterno">Mostrar LCI</button>
+                <button class="btn btn-outline-primary" @onclick="MostrarLongitudExterno">Mostrar LCE</button>
+                <button class="btn btn-outline-primary" @onclick="EliminarNodoHoja">Eliminar Nodos Hoja</button>
+            </div>
+
+            <p class="text-info">@mensaje</p>
+
+            @if (hijos != null)
+            {
+                <div class="mt-2">
+                    <strong>Hijo Izquierdo:</strong> @hijos.HijoIzquierdo<br />
+                    <strong>Hijo Derecho:</strong> @hijos.HijoDerecho
+                </div>
+            }
+
+            @if (todosLosDescendientes != null)
+            {
+                <div class="alert alert-info mt-2">
+                    <strong>Todos los descendientes:</strong> @todosLosDescendientes.Mostrar()
+                </div>
+            }
+
+            @if (padre.HasValue)
+            {
+                <div class="alert alert-warning mt-2">
+                    <strong>Padre del nodo:</strong> @padre.Value
+                </div>
+            }
+
+            @if (hojas != null)
+            {
+                <div class="alert alert-success mt-2">
+                    <strong>Nodos hoja:</strong> @hojas.Mostrar()
+                </div>
+            }
+
+            @if (interiores != null)
+            {
+                <div class="alert alert-secondary mt-2">
+                    <strong>Nodos interiores:</strong> @interiores.Mostrar()
+                </div>
+            }
+
+            @if (grado.HasValue)
+            {
+                <div class="alert alert-warning mt-2">
+                    <strong>Grado del nodo:</strong> @grado
+                </div>
+            }
+
+            @if (nivel.HasValue)
+            {
+                <div class="alert alert-primary mt-2">
+                    <strong>Nivel del nodo:</strong> @nivel
+                </div>
+            }
+        </div>
+
+        <div class="col-md-9 p-4">
+
+            <div class="mt-5">
+                <h3 class="mb-3">Visualización del Árbol</h3>
+                <ArbolGrafico Raiz="@abb.Raiz"
+                ValorBuscado="@valorBuscado"
+                Hijos="@hijos"
+                DescendientesTotales="@todosLosDescendientes"
+                ValorPadre="@padre"
+                NodosHoja="@hojas"
+                NodosInteriores="@interiores"
+                NodoConGrado="@valorGrado" />
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    ArbolBinarioBusquedaManual abb = new();
+    RecorridoABB preorden = new();
+    RecorridoABB inorden = new();
+    RecorridoABB postorden = new();
+
+    int valor;
+    int? valorBuscado = null;
+    string mensaje = "";
+
+    Descendientes? hijos = null;
+    DescendientesABB? todosLosDescendientes = null;
+    int? padre = null;
+    RecorridoABB? hojas = null;
+    RecorridoABB? interiores = null;
+    int? grado = null;
+    int? nivel = null;
+    int? valorGrado = null;
+
+    void Insertar()
+    {
+        abb.Insertar(valor);
+        mensaje = $"Se insertó el valor {valor}.";
+        LimpiarVisuales();
+    }
+
+    void Buscar()
+    {
+        valorBuscado = valor;
+        LimpiarVisuales();
+        bool existe = abb.Buscar(valor);
+        mensaje = existe
+            ? $"El valor {valor} fue encontrado."
+            : $"El valor {valor} no está en el árbol.";
+    }
+
+    void Eliminar()
+    {
+        bool eliminado = abb.EliminarConResultado(valor);
+        mensaje = eliminado
+            ? $"Se eliminó el valor {valor}."
+            : $"El valor {valor} no fue encontrado.";
+        valorBuscado = null;
+        LimpiarVisuales();
+    }
+
+    void MostrarHijos()
+    {
+        LimpiarVisuales();
+        hijos = abb.ObtenerDescendientes(valor);
+        mensaje = $"Mostrando hijos del nodo {valor}.";
+        valorBuscado = valor;
+    }
+
+    void MostrarDescendientesTodos()
+    {
+        LimpiarVisuales();
+        todosLosDescendientes = abb.ObtenerDescendientesTodos(valor);
+        mensaje = $"Mostrando todos los descendientes del nodo {valor}.";
+        valorBuscado = valor;
+    }
+
+    void MostrarPadre()
+    {
+        LimpiarVisuales();
+        padre = abb.ObtenerPadre(valor);
+        mensaje = padre.HasValue
+            ? $"El padre del nodo {valor} es: {padre.Value}."
+            : $"El nodo {valor} no tiene padre (es la raíz o no existe).";
+        valorBuscado = valor;
+    }
+
+    void MostrarHojas()
+    {
+        LimpiarVisuales();
+        hojas = abb.ObtenerNodosHoja();
+        mensaje = "Mostrando nodos hoja.";
+    }
+
+    void MostrarInteriores()
+    {
+        LimpiarVisuales();
+        interiores = abb.ObtenerNodosInteriores();
+        mensaje = "Mostrando nodos interiores.";
+    }
+
+    void MostrarLongitudInterno() {
+        LimpiarVisuales();
+        string longitud = abb.CalcularLongitudCaminoInterno();
+        mensaje = longitud;
+    }
+
+    void MostrarLongitudExterno()
+    {
+        LimpiarVisuales();
+        // double longitud = abb.CalcularLongitudCaminoExterno();
+       // mensaje = $"La longitud del camino externo es: {longitud}.";
+    }
+
+    void EliminarNodoHoja() {
+        mensaje = abb.EliminarNodosH();
+        LimpiarVisuales();
+    }
+
+    void MostrarGrado()
+    {
+        LimpiarVisuales();
+        grado = abb.ObtenerGrado(valor);
+        valorGrado = valor;
+        mensaje = grado.HasValue
+            ? $"El grado del nodo {valor} es: {grado.Value}."
+            : $"El nodo {valor} no existe en el árbol.";
+        valorBuscado = null;
+    }
+
+    void MostrarNivel()
+    {
+        LimpiarVisuales();
+        nivel = abb.ObtenerNivel(valor);
+        mensaje = nivel.HasValue
+            ? $"El nivel del nodo {valor} es: {nivel.Value}."
+            : $"El nodo {valor} no existe en el árbol.";
+        valorBuscado = valor;
+    }
+
+
+    void LimpiarVisuales()
+    {
+        hijos = null;
+        todosLosDescendientes = null;
+        padre = null;
+        hojas = null;
+        interiores = null;
+        grado = null;
+        valorGrado = null;
+        nivel = null;
+    }
+}

@@ -1,0 +1,128 @@
+﻿@using Models
+
+<svg width="1000" height="800" style="border:1px solid lightgray">
+    @NodoSvg(Raiz, 500, 50, 100)
+</svg>
+
+@code {
+    [Parameter]
+    public NodoABB? Raiz { get; set; }
+
+    [Parameter]
+    public int? ValorBuscado { get; set; }
+
+    [Parameter]
+    public Descendientes? Hijos { get; set; }
+
+    [Parameter]
+    public DescendientesABB? DescendientesTotales { get; set; }
+
+    [Parameter]
+    public int? ValorPadre { get; set; }
+
+    [Parameter]
+    public RecorridoABB? NodosHoja { get; set; }
+
+    [Parameter]
+    public RecorridoABB? NodosInteriores { get; set; }
+
+    [Parameter]
+    public int? NodoConGrado { get; set; }
+
+    RenderFragment NodoSvg(NodoABB? nodo, double x, double y, double offsetX) => builder =>
+    {
+        if (nodo == null)
+            return;
+
+        int seq = 0;
+
+        if (nodo.Izquierdo != null)
+        {
+            double childX = x - offsetX;
+            double childY = y + 100;
+
+            builder.OpenElement(seq++, "line");
+            builder.AddAttribute(seq++, "x1", x);
+            builder.AddAttribute(seq++, "y1", y);
+            builder.AddAttribute(seq++, "x2", childX);
+            builder.AddAttribute(seq++, "y2", childY);
+            builder.AddAttribute(seq++, "stroke", "black");
+            builder.CloseElement();
+
+            builder.AddContent(seq++, NodoSvg(nodo.Izquierdo, childX, childY, offsetX * 0.6));
+        }
+
+        if (nodo.Derecho != null)
+        {
+            double childX = x + offsetX;
+            double childY = y + 100;
+
+            builder.OpenElement(seq++, "line");
+            builder.AddAttribute(seq++, "x1", x);
+            builder.AddAttribute(seq++, "y1", y);
+            builder.AddAttribute(seq++, "x2", childX);
+            builder.AddAttribute(seq++, "y2", childY);
+            builder.AddAttribute(seq++, "stroke", "black");
+            builder.CloseElement();
+
+            builder.AddContent(seq++, NodoSvg(nodo.Derecho, childX, childY, offsetX * 0.6));
+        }
+
+        var color = "#ffd966";
+        var anim = "";
+
+        if (ValorBuscado.HasValue && nodo.Valor == ValorBuscado.Value)
+        {
+            color = "#8fff7f";
+        }
+        else if (Hijos != null && (nodo.Valor == Hijos.HijoIzquierdo || nodo.Valor == Hijos.HijoDerecho))
+        {
+            color = "#7fbfff";
+            anim = "pulse";
+        }
+        else if (DescendientesTotales != null && DescendientesTotales.Contiene(nodo.Valor))
+        {
+            color = "#a3e4ff";
+            anim = "pulse-desc";
+        }
+        else if (ValorPadre.HasValue && nodo.Valor == ValorPadre.Value)
+        {
+            color = "#ffa94d";
+            anim = "pulse-padre";
+        }
+        else if (NodosHoja != null && NodosHoja.Contiene(nodo.Valor))
+        {
+            color = "#58d68d";
+        }
+        else if (NodosInteriores != null && NodosInteriores.Contiene(nodo.Valor))
+        {
+            color = "#a0522d";
+        }
+        else if (NodoConGrado.HasValue && nodo.Valor == NodoConGrado.Value)
+        {
+            color = "#c39bd3";
+        }
+
+        builder.OpenElement(seq++, "circle");
+        builder.AddAttribute(seq++, "cx", x);
+        builder.AddAttribute(seq++, "cy", y);
+        builder.AddAttribute(seq++, "r", 20);
+        builder.AddAttribute(seq++, "fill", color);
+        builder.AddAttribute(seq++, "stroke", "black");
+        if (!string.IsNullOrEmpty(anim))
+            builder.AddAttribute(seq++, "class", anim);
+        builder.CloseElement();
+
+        builder.OpenElement(seq++, "text");
+        builder.AddAttribute(seq++, "x", x);
+        builder.AddAttribute(seq++, "y", y + 5);
+        builder.AddAttribute(seq++, "text-anchor", "middle");
+        builder.AddAttribute(seq++, "font-size", "14");
+        builder.AddAttribute(seq++, "fill", "black");
+        builder.AddContent(seq++, nodo.Valor);
+        builder.CloseElement();
+    };
+}
+
+
+

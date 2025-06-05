@@ -1,0 +1,333 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Luis\\source\\repos\\ProyectoFinalProgra\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{19E3E9AD-6281-4919-9FF8-B08C9688CE8E}|ProyectoFinalProgra.csproj|c:\\users\\luis\\source\\repos\\proyectofinalprogra\\models\\arbolbinariobusquedamanual.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{19E3E9AD-6281-4919-9FF8-B08C9688CE8E}|ProyectoFinalProgra.csproj|solutionrelative:models\\arbolbinariobusquedamanual.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19E3E9AD-6281-4919-9FF8-B08C9688CE8E}|ProyectoFinalProgra.csproj|c:\\users\\luis\\source\\repos\\proyectofinalprogra\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{19E3E9AD-6281-4919-9FF8-B08C9688CE8E}|ProyectoFinalProgra.csproj|solutionrelative:pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19E3E9AD-6281-4919-9FF8-B08C9688CE8E}|ProyectoFinalProgra.csproj|c:\\users\\luis\\source\\repos\\proyectofinalprogra\\models\\nodoabb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{19E3E9AD-6281-4919-9FF8-B08C9688CE8E}|ProyectoFinalProgra.csproj|solutionrelative:models\\nodoabb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19E3E9AD-6281-4919-9FF8-B08C9688CE8E}|ProyectoFinalProgra.csproj|c:\\users\\luis\\source\\repos\\proyectofinalprogra\\models\\nodorecorrido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{19E3E9AD-6281-4919-9FF8-B08C9688CE8E}|ProyectoFinalProgra.csproj|solutionrelative:models\\nodorecorrido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19E3E9AD-6281-4919-9FF8-B08C9688CE8E}|ProyectoFinalProgra.csproj|c:\\users\\luis\\source\\repos\\proyectofinalprogra\\pages\\comparararboles.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{19E3E9AD-6281-4919-9FF8-B08C9688CE8E}|ProyectoFinalProgra.csproj|solutionrelative:pages\\comparararboles.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19E3E9AD-6281-4919-9FF8-B08C9688CE8E}|ProyectoFinalProgra.csproj|c:\\users\\luis\\source\\repos\\proyectofinalprogra\\pages\\arbolgrafico.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{19E3E9AD-6281-4919-9FF8-B08C9688CE8E}|ProyectoFinalProgra.csproj|solutionrelative:pages\\arbolgrafico.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19E3E9AD-6281-4919-9FF8-B08C9688CE8E}|ProyectoFinalProgra.csproj|c:\\users\\luis\\source\\repos\\proyectofinalprogra\\pages\\arbolcomparar1component.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{19E3E9AD-6281-4919-9FF8-B08C9688CE8E}|ProyectoFinalProgra.csproj|solutionrelative:pages\\arbolcomparar1component.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19E3E9AD-6281-4919-9FF8-B08C9688CE8E}|ProyectoFinalProgra.csproj|c:\\users\\luis\\source\\repos\\proyectofinalprogra\\models\\recorridoabb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{19E3E9AD-6281-4919-9FF8-B08C9688CE8E}|ProyectoFinalProgra.csproj|solutionrelative:models\\recorridoabb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19E3E9AD-6281-4919-9FF8-B08C9688CE8E}|ProyectoFinalProgra.csproj|c:\\users\\luis\\source\\repos\\proyectofinalprogra\\models\\descendientesabb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{19E3E9AD-6281-4919-9FF8-B08C9688CE8E}|ProyectoFinalProgra.csproj|solutionrelative:models\\descendientesabb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19E3E9AD-6281-4919-9FF8-B08C9688CE8E}|ProyectoFinalProgra.csproj|c:\\users\\luis\\source\\repos\\proyectofinalprogra\\models\\descendientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{19E3E9AD-6281-4919-9FF8-B08C9688CE8E}|ProyectoFinalProgra.csproj|solutionrelative:models\\descendientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19E3E9AD-6281-4919-9FF8-B08C9688CE8E}|ProyectoFinalProgra.csproj|c:\\users\\luis\\source\\repos\\proyectofinalprogra\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{19E3E9AD-6281-4919-9FF8-B08C9688CE8E}|ProyectoFinalProgra.csproj|solutionrelative:layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19E3E9AD-6281-4919-9FF8-B08C9688CE8E}|ProyectoFinalProgra.csproj|c:\\users\\luis\\source\\repos\\proyectofinalprogra\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{19E3E9AD-6281-4919-9FF8-B08C9688CE8E}|ProyectoFinalProgra.csproj|solutionrelative:layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19E3E9AD-6281-4919-9FF8-B08C9688CE8E}|ProyectoFinalProgra.csproj|c:\\users\\luis\\source\\repos\\proyectofinalprogra\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{19E3E9AD-6281-4919-9FF8-B08C9688CE8E}|ProyectoFinalProgra.csproj|solutionrelative:wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19E3E9AD-6281-4919-9FF8-B08C9688CE8E}|ProyectoFinalProgra.csproj|c:\\users\\luis\\source\\repos\\proyectofinalprogra\\proyectofinalprogra.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{19E3E9AD-6281-4919-9FF8-B08C9688CE8E}|ProyectoFinalProgra.csproj|solutionrelative:proyectofinalprogra.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19E3E9AD-6281-4919-9FF8-B08C9688CE8E}|ProyectoFinalProgra.csproj|c:\\users\\luis\\source\\repos\\proyectofinalprogra\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{19E3E9AD-6281-4919-9FF8-B08C9688CE8E}|ProyectoFinalProgra.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19E3E9AD-6281-4919-9FF8-B08C9688CE8E}|ProyectoFinalProgra.csproj|c:\\users\\luis\\source\\repos\\proyectofinalprogra\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{19E3E9AD-6281-4919-9FF8-B08C9688CE8E}|ProyectoFinalProgra.csproj|solutionrelative:_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19E3E9AD-6281-4919-9FF8-B08C9688CE8E}|ProyectoFinalProgra.csproj|c:\\users\\luis\\source\\repos\\proyectofinalprogra\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{19E3E9AD-6281-4919-9FF8-B08C9688CE8E}|ProyectoFinalProgra.csproj|solutionrelative:app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19E3E9AD-6281-4919-9FF8-B08C9688CE8E}|ProyectoFinalProgra.csproj|c:\\users\\luis\\source\\repos\\proyectofinalprogra\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{19E3E9AD-6281-4919-9FF8-B08C9688CE8E}|ProyectoFinalProgra.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "NodoABB.cs",
+              "DocumentMoniker": "C:\\Users\\Luis\\source\\repos\\ProyectoFinalProgra\\Models\\NodoABB.cs",
+              "RelativeDocumentMoniker": "Models\\NodoABB.cs",
+              "ToolTip": "C:\\Users\\Luis\\source\\repos\\ProyectoFinalProgra\\Models\\NodoABB.cs",
+              "RelativeToolTip": "Models\\NodoABB.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-05T01:55:51.081Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "index.html",
+              "DocumentMoniker": "C:\\Users\\Luis\\source\\repos\\ProyectoFinalProgra\\wwwroot\\index.html",
+              "RelativeDocumentMoniker": "wwwroot\\index.html",
+              "ToolTip": "C:\\Users\\Luis\\source\\repos\\ProyectoFinalProgra\\wwwroot\\index.html",
+              "RelativeToolTip": "wwwroot\\index.html",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAAAEgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-06-05T01:23:05.467Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ArbolGrafico.razor",
+              "DocumentMoniker": "C:\\Users\\Luis\\source\\repos\\ProyectoFinalProgra\\Pages\\ArbolGrafico.razor",
+              "RelativeDocumentMoniker": "Pages\\ArbolGrafico.razor",
+              "ToolTip": "C:\\Users\\Luis\\source\\repos\\ProyectoFinalProgra\\Pages\\ArbolGrafico.razor",
+              "RelativeToolTip": "Pages\\ArbolGrafico.razor",
+              "ViewState": "AgIAAHAAAAAAAAAAAAAgwIAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-05T01:12:56.948Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ArbolBinarioBusquedaManual.cs",
+              "DocumentMoniker": "C:\\Users\\Luis\\source\\repos\\ProyectoFinalProgra\\Models\\ArbolBinarioBusquedaManual.cs",
+              "RelativeDocumentMoniker": "Models\\ArbolBinarioBusquedaManual.cs",
+              "ToolTip": "C:\\Users\\Luis\\source\\repos\\ProyectoFinalProgra\\Models\\ArbolBinarioBusquedaManual.cs",
+              "RelativeToolTip": "Models\\ArbolBinarioBusquedaManual.cs",
+              "ViewState": "AgIAAMUAAAAAAAAAAAA+wM4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-05T01:03:28.568Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Home.razor",
+              "DocumentMoniker": "C:\\Users\\Luis\\source\\repos\\ProyectoFinalProgra\\Pages\\Home.razor",
+              "RelativeDocumentMoniker": "Pages\\Home.razor",
+              "ToolTip": "C:\\Users\\Luis\\source\\repos\\ProyectoFinalProgra\\Pages\\Home.razor",
+              "RelativeToolTip": "Pages\\Home.razor",
+              "ViewState": "AgIAALYAAAAAAAAAAAAAAMgAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-05T01:16:51.658Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "NodoRecorrido.cs",
+              "DocumentMoniker": "C:\\Users\\Luis\\source\\repos\\ProyectoFinalProgra\\Models\\NodoRecorrido.cs",
+              "RelativeDocumentMoniker": "Models\\NodoRecorrido.cs",
+              "ToolTip": "C:\\Users\\Luis\\source\\repos\\ProyectoFinalProgra\\Models\\NodoRecorrido.cs",
+              "RelativeToolTip": "Models\\NodoRecorrido.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-05T01:55:49.616Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Descendientes.cs",
+              "DocumentMoniker": "C:\\Users\\Luis\\source\\repos\\ProyectoFinalProgra\\Models\\Descendientes.cs",
+              "RelativeDocumentMoniker": "Models\\Descendientes.cs",
+              "ToolTip": "C:\\Users\\Luis\\source\\repos\\ProyectoFinalProgra\\Models\\Descendientes.cs",
+              "RelativeToolTip": "Models\\Descendientes.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-05T01:55:53.094Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CompararArboles.razor",
+              "DocumentMoniker": "C:\\Users\\Luis\\source\\repos\\ProyectoFinalProgra\\Pages\\CompararArboles.razor",
+              "RelativeDocumentMoniker": "Pages\\CompararArboles.razor",
+              "ToolTip": "C:\\Users\\Luis\\source\\repos\\ProyectoFinalProgra\\Pages\\CompararArboles.razor",
+              "RelativeToolTip": "Pages\\CompararArboles.razor",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAIwGEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-05T01:47:29.054Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ArbolComparar1Component.razor",
+              "DocumentMoniker": "C:\\Users\\Luis\\source\\repos\\ProyectoFinalProgra\\Pages\\ArbolComparar1Component.razor",
+              "RelativeDocumentMoniker": "Pages\\ArbolComparar1Component.razor",
+              "ToolTip": "C:\\Users\\Luis\\source\\repos\\ProyectoFinalProgra\\Pages\\ArbolComparar1Component.razor",
+              "RelativeToolTip": "Pages\\ArbolComparar1Component.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-05T01:49:45.032Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "DescendientesABB.cs",
+              "DocumentMoniker": "C:\\Users\\Luis\\source\\repos\\ProyectoFinalProgra\\Models\\DescendientesABB.cs",
+              "RelativeDocumentMoniker": "Models\\DescendientesABB.cs",
+              "ToolTip": "C:\\Users\\Luis\\source\\repos\\ProyectoFinalProgra\\Models\\DescendientesABB.cs",
+              "RelativeToolTip": "Models\\DescendientesABB.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-05T01:55:52.06Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "RecorridoABB.cs",
+              "DocumentMoniker": "C:\\Users\\Luis\\source\\repos\\ProyectoFinalProgra\\Models\\RecorridoABB.cs",
+              "RelativeDocumentMoniker": "Models\\RecorridoABB.cs",
+              "ToolTip": "C:\\Users\\Luis\\source\\repos\\ProyectoFinalProgra\\Models\\RecorridoABB.cs",
+              "RelativeToolTip": "Models\\RecorridoABB.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-05T01:55:39.617Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "MainLayout.razor",
+              "DocumentMoniker": "C:\\Users\\Luis\\source\\repos\\ProyectoFinalProgra\\Layout\\MainLayout.razor",
+              "RelativeDocumentMoniker": "Layout\\MainLayout.razor",
+              "ToolTip": "C:\\Users\\Luis\\source\\repos\\ProyectoFinalProgra\\Layout\\MainLayout.razor",
+              "RelativeToolTip": "Layout\\MainLayout.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-05T01:00:38.057Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "NavMenu.razor",
+              "DocumentMoniker": "C:\\Users\\Luis\\source\\repos\\ProyectoFinalProgra\\Layout\\NavMenu.razor",
+              "RelativeDocumentMoniker": "Layout\\NavMenu.razor",
+              "ToolTip": "C:\\Users\\Luis\\source\\repos\\ProyectoFinalProgra\\Layout\\NavMenu.razor",
+              "RelativeToolTip": "Layout\\NavMenu.razor",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAgwBAAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-05T01:17:20.109Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ProyectoFinalProgra.csproj",
+              "DocumentMoniker": "C:\\Users\\Luis\\source\\repos\\ProyectoFinalProgra\\ProyectoFinalProgra.csproj",
+              "RelativeDocumentMoniker": "ProyectoFinalProgra.csproj",
+              "ToolTip": "C:\\Users\\Luis\\source\\repos\\ProyectoFinalProgra\\ProyectoFinalProgra.csproj",
+              "RelativeToolTip": "ProyectoFinalProgra.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-06-05T01:11:40.565Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Luis\\source\\repos\\ProyectoFinalProgra\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Luis\\source\\repos\\ProyectoFinalProgra\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-05T01:29:54.573Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "_Imports.razor",
+              "DocumentMoniker": "C:\\Users\\Luis\\source\\repos\\ProyectoFinalProgra\\_Imports.razor",
+              "RelativeDocumentMoniker": "_Imports.razor",
+              "ToolTip": "C:\\Users\\Luis\\source\\repos\\ProyectoFinalProgra\\_Imports.razor",
+              "RelativeToolTip": "_Imports.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-05T01:23:01.628Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "App.razor",
+              "DocumentMoniker": "C:\\Users\\Luis\\source\\repos\\ProyectoFinalProgra\\App.razor",
+              "RelativeDocumentMoniker": "App.razor",
+              "ToolTip": "C:\\Users\\Luis\\source\\repos\\ProyectoFinalProgra\\App.razor",
+              "RelativeToolTip": "App.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-05T01:22:57.122Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\Luis\\source\\repos\\ProyectoFinalProgra\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\Luis\\source\\repos\\ProyectoFinalProgra\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Properties\\launchSettings.json",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-06-05T01:12:30.643Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
