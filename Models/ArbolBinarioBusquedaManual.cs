@@ -285,11 +285,8 @@ namespace ProyectoFinalProgra.Models
             Intercambiar(nodo.Derecho);
         }
 
-        public int CalcularLongitudCaminoExterno()
-        {
-            return LCE(Raiz, 0);   
-        }
-
+       
+        /*
         private int LCE(NodoABB? nodo, int nivel)
         {
 
@@ -299,7 +296,7 @@ namespace ProyectoFinalProgra.Models
 
             return LCE(nodo.Izquierdo, nivel + 1) +
                    LCE(nodo.Derecho, nivel + 1);
-        }
+        }*/
 
 
 
@@ -359,13 +356,20 @@ namespace ProyectoFinalProgra.Models
             
         }
 
-        /*implementar
-
         public string CalcularLongitudCaminoExterno()
         {
-            return LongitudCaminoExterno(Raiz, 1);
+            double valor = LongitudCaminoExterno(Raiz, 0);
+            int hojas = ContarHojas(Raiz);
+            if (hojas != 0)
+            {
+                return $"LCE= {valor}  LCEM = {valor / hojas}";
+            }
+            else
+            {
+                return "Error";
+            }
         }
-        */
+
 
         private double LongitudCaminoInterno(NodoABB nodo, int nivel)
         {
@@ -382,28 +386,37 @@ namespace ProyectoFinalProgra.Models
                  + LongitudCaminoInterno(nodo.Derecho, nivel + 1);
         }
 
-        /*
-        public double LongitudCaminoExterno(NodoABB nodo, int nivel)
+               
+
+        private int ContarHojas(NodoABB nodo)
         {
             if (nodo == null)
                 return 0;
 
             if (nodo.Izquierdo == null && nodo.Derecho == null)
-            {
-                return nivel;
-            }
-            else
-            {
-                return LongitudCaminoExterno(nodo.Izquierdo, nivel + 1)
-                     + LongitudCaminoExterno(nodo.Derecho, nivel + 1);
-            }
+                return 1;
+
+            return ContarHojas(nodo.Izquierdo) + ContarHojas(nodo.Derecho);
         }
 
-        */
+
+        private int LongitudCaminoExterno(NodoABB nodo, int nivel)
+        {
+            if (nodo == null)
+                return 0;
+
+            if (nodo.Izquierdo == null && nodo.Derecho == null)
+                return nivel; // Nodo hoja
+
+            int izquierda = LongitudCaminoExterno(nodo.Izquierdo, nivel + 1);
+            int derecha = LongitudCaminoExterno(nodo.Derecho, nivel + 1);
+
+            return izquierda + derecha;
+        }
 
 
-
-
+        
+        
         public int? ObtenerGrado(int valor)
         {
             NodoABB? nodo = BuscarNodo(Raiz, valor);

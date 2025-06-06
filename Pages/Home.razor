@@ -101,6 +101,7 @@
 </div>
 
 @code {
+
     ArbolBinarioBusquedaManual abb = new();
     RecorridoABB preorden = new();
     RecorridoABB inorden = new();
@@ -195,8 +196,8 @@
     void MostrarLongitudExterno()
     {
         LimpiarVisuales();
-        // double longitud = abb.CalcularLongitudCaminoExterno();
-        // mensaje = $"La longitud del camino externo es: {longitud}.";
+        string longitud = abb.CalcularLongitudCaminoExterno();
+        mensaje = longitud;               
     }
 
     void EliminarNodoHoja() {
